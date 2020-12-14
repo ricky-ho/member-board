@@ -1,0 +1,30 @@
+extends layout
+
+block content 
+  div(class="signup-wrapper")
+    form(action="" method="POST")
+
+      div(class="form-group")
+        label(for="first-name") First Name
+        input#first-name(type="text" name="first_name" required="true" value=(data ? data.first_name : ''))
+        label(for="last-name") Last Name
+        input#last-name(type="text" name="last_name" required="true" value=(data ? data.last_name : ''))
+
+      div(class="form-group")
+        label(for="username") Email
+        input#username(type="email" name="username" required="true" value=(data ? data.username : ''))
+
+      div(class="form-group")
+        label(for="password") Password
+        input#password(type="password" name="password" minlength="8" required="true")
+
+        label(for="confirm-password") Confirm Password
+        input#confirm-password(type="password" name="confirm_password" required="true")
+
+      button(type="submit" class="btn") Sign-Up
+
+    if errors
+      ul
+        each err in errors
+          li #{err.msg}
+      

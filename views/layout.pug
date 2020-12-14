@@ -1,7 +1,25 @@
 doctype html
-html
+html(lang="en")
   head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel="stylesheet", href="/stylesheets/style.css")
+    link(rel="stylesheet", href="/stylesheets/login.css")
+    link(rel="stylesheet", href="/stylesheets/signup.css")
   body
-    block content
+    nav
+      a(href="/" class="nav-logo")
+        h1 Member Site
+      ul(class="nav-list")
+        if user
+          a(href="/logout" class="nav-item")
+            li Logout
+        else 
+          a(href="/sign-up" class="nav-item")
+            li Sign Up
+          a(href="/login" class="nav-item")
+            li Login
+    main 
+      block content
+      
