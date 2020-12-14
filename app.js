@@ -93,13 +93,11 @@ app.use(passport.session());
 
 // Configure routes for the application
 const indexRouter = require("./routes/index");
-const usersRouter = require("./routes/users");
 const signUpRouter = require("./routes/signup");
 const loginRouter = require("./routes/login");
 
 // Application routes
 app.use("/", indexRouter);
-app.use("/users", usersRouter);
 app.use("/sign-up", signUpRouter);
 app.use("/login", loginRouter);
 

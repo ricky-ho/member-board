@@ -2,29 +2,29 @@ extends layout
 
 block content 
   div(class="signup-wrapper")
-    form(action="" method="POST")
+
+    div(class="error-message")
+      if errors
+        p #{errors[0].msg}
+
+    form(action="" method="POST" class="signup-form")
 
       div(class="form-group")
         label(for="first-name") First Name
-        input#first-name(type="text" name="first_name" required="true" value=(data ? data.first_name : ''))
+        input#first-name(type="text" name="first_name" placeholder="Enter your first name e.g.John" value=(data ? data.first_name : '') required)
         label(for="last-name") Last Name
-        input#last-name(type="text" name="last_name" required="true" value=(data ? data.last_name : ''))
+        input#last-name(type="text" name="last_name" placeholder="Enter your last name e.g. Smith" value=(data ? data.last_name : '') required)
 
       div(class="form-group")
-        label(for="username") Email
-        input#username(type="email" name="username" required="true" value=(data ? data.username : ''))
+        label(for="username") Username
+        input#username(type="email" name="username" placeholder="Enter your email address" value=(data ? data.username : '') required)
 
       div(class="form-group")
         label(for="password") Password
-        input#password(type="password" name="password" minlength="8" required="true")
+        input#password(type="password" name="password" minlength="8" placeholder="Password must be a minimum of 8 characters" required)
 
         label(for="confirm-password") Confirm Password
-        input#confirm-password(type="password" name="confirm_password" required="true")
+        input#confirm-password(type="password" name="confirm_password" placeholder="Re-enter your password" required)
 
       button(type="submit" class="btn") Sign-Up
-
-    if errors
-      ul
-        each err in errors
-          li #{err.msg}
       

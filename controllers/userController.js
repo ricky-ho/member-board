@@ -32,9 +32,7 @@ exports.user_signup_post = [
         }
       });
     })
-    .withMessage(
-      "This email is already in use. Please try using a different email"
-    ),
+    .withMessage("This email is already in use. Please use a different email"),
   body("password")
     .isLength({ min: 8, max: 20 })
     .withMessage("The password must be between 8-20 characters long"),
@@ -77,7 +75,7 @@ exports.user_signup_post = [
             if (err) {
               return next(err);
             }
-            res.redirect("/");
+            next();
           });
         });
       });

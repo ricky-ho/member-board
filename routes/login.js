@@ -16,7 +16,6 @@ router.post(
     failureFlash: true,
   }),
   (req, res) => {
-    console.log(req.user);
     req.flash("success", `Welcome back ${req.user.first_name}`);
     return res.redirect("/");
   }

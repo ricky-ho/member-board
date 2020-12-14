@@ -1,5 +1,6 @@
 .login-wrapper {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -7,18 +8,19 @@
 }
 
 .login {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 400px;
+  width: 450px;
   height: 300px;
-  background: #afc0fa;
-  border: 10px solid #435eb9;
+  padding-top: 10px;
+  background: #d6def8;
+  border: 3px solid #435eb9;
   border-radius: 10px;
+  box-shadow: 4px 4px 8px rgb(107, 107, 107);
 }
 
-.form-group {
-  display: flex;
-  flex-direction: column;
-  margin: 15px 0;
+.login-btn {
+  margin-top: 60px;
 }
