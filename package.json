@@ -7,6 +7,9 @@
     "devstart": "nodemon ./bin/www",
     "serverstart": "SET DEBUG=member-site:* & npm run devstart"
   },
+  "engines": {
+    "node": "12.18.3"
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "connect-flash": "^0.1.1",
