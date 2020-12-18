@@ -29,6 +29,8 @@
   border: 1px solid;
   padding: 10px;
   margin: 15px 0;
+  word-wrap: break-word;
+  overflow: hidden;
 }
 
 .create-btn {
