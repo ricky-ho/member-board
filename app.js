@@ -90,16 +90,23 @@ app.use(function (req, res, next) {
 // Initialize Passport and restore authentication state, if any, from the session
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(function (req, res, next) {
+  res.locals.title = "Member Board";
+  res.locals.user = req.user;
+  next();
+});
 
 // Configure routes for the application
 const indexRouter = require("./routes/index");
 const signUpRouter = require("./routes/signup");
 const loginRouter = require("./routes/login");
+const messagesRouter = require("./routes/messages");
 
 // Application routes
 app.use("/", indexRouter);
 app.use("/sign-up", signUpRouter);
 app.use("/login", loginRouter);
+app.use("/messages", messagesRouter);
 
 app.get("/logout", (req, res) => {
   req.logout();

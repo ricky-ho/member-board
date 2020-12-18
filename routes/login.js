@@ -12,13 +12,10 @@ router.post(
   "/",
   user_controller.user_login_post,
   passport.authenticate("local", {
+    successRedirect: "/",
     failureRedirect: "/login",
     failureFlash: true,
-  }),
-  (req, res) => {
-    req.flash("success", `Welcome back ${req.user.first_name}`);
-    return res.redirect("/");
-  }
+  })
 );
 
 module.exports = router;

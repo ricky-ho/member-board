@@ -5,14 +5,14 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title= title
     link(rel="stylesheet", href="/stylesheets/style.css")
-    link(rel="stylesheet", href="/stylesheets/login.css")
-    link(rel="stylesheet", href="/stylesheets/signup.css")
+    link(rel="stylesheet", href="/stylesheets/forms.css")
+    link(rel="stylesheet", href="/stylesheets/messages.css")
   body
     nav
       a(href="/" class="nav-logo")
-        h1 Member Site
+        h1= locals.title
       ul(class="nav-list")
-        if user
+        if locals.user
           a(href="/logout" class="nav-item")
             li Logout
         else 

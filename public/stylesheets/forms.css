@@ -1,0 +1,67 @@
+form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+
+label {
+  font-size: 1.25rem;
+  margin: 5px 0;
+}
+
+input {
+  font-size: 1rem;
+  padding: 4px;
+  outline: none;
+}
+
+textarea {
+  outline: none;
+  overflow-y: scroll;
+  font-size: 1rem;
+  padding: 5px;
+}
+
+/* SIGN UP FORM STYLES */
+.signup-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90%;
+}
+
+.signup-form {
+  padding: 15px;
+  border: 1px solid;
+  box-shadow: 4px 4px 8px rgb(107, 107, 107);
+}
+
+/* LOGIN FORM STYLES */
+.login-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90vh;
+}
+
+.login {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 450px;
+  height: 300px;
+  padding-top: 10px;
+  background: #d6def8;
+  border: 3px solid #435eb9;
+  border-radius: 10px;
+  box-shadow: 4px 4px 8px rgb(107, 107, 107);
+}
+
+.login-btn {
+  margin-top: 60px;
+}

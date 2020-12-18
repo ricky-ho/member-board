@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
+const message_controller = require("../controllers/messageController");
+
 /* GET home page. */
-router.get("/", function (req, res, next) {
-  res.render("index", { user: req.user, title: "Member Site" });
-});
+router.get("/", message_controller.get_messages);
 
 module.exports = router;

@@ -15,6 +15,7 @@ const userSchema = new Schema({
     enum: ["Regular", "Premium"],
     default: "Regular",
   },
+  isAdmin: { type: Boolean, default: false },
 });
 
 module.exports = mongoose.model("User", userSchema);

@@ -1,0 +1,81 @@
+/* MESSAGE BOARD */
+
+.welcome-message {
+  padding: 25px 0;
+}
+
+.messages-display-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
+  margin-bottom: 50px;
+}
+
+.messages-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 75%;
+  min-height: 100vh;
+  background: #fff;
+}
+
+.message {
+  position: relative;
+  width: 400px;
+  border: 1px solid;
+  padding: 10px;
+  margin: 15px 0;
+}
+
+.create-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 6px;
+  font-size: 2rem;
+}
+
+/* MESSAGE FORM */
+
+.message-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90vh;
+}
+
+.message-form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid;
+  padding: 5px 10px;
+  width: 500px;
+  height: 400px;
+  background: #d6def8;
+  box-shadow: 4px 4px 8px rgb(107, 107, 107);
+}
+
+.cancel-btn {
+  position: absolute;
+  right: 10px;
+  background: #ff0000;
+  padding: 0 5px 4px 5px;
+  outline: none;
+  border: 1px solid #bb0000;
+}
+
+.cancel-btn:hover {
+  background: #bb0000;
+}
+
+.submit-btn {
+  margin-top: 30px;
+}

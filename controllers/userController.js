@@ -4,18 +4,24 @@ const bcrypt = require("bcryptjs");
 const User = require("../models/user");
 
 exports.user_signup_get = (req, res) => {
-  res.render("signup", { user: req.user, title: "Member Sign Up" });
+  if (!req.user) {
+    res.render("signup_form");
+  } else {
+    res.redirect("/");
+  }
 };
 
 exports.user_signup_post = [
   // Validate and sanitize user input
   body("first_name")
+    .trim()
     .isAlpha()
     .withMessage("The first name field must only contain alphabetic characters")
     .bail()
     .isLength({ min: 1, max: 50 })
     .escape(),
   body("last_name")
+    .trim()
     .isAlpha()
     .withMessage("The last name field must only contain alphabetic characters")
     .bail()
@@ -54,8 +60,7 @@ exports.user_signup_post = [
 
     if (!errors.isEmpty()) {
       // If there are errors in the user input, re-render the form with error messages
-      res.render("signup", {
-        title: "Member Sign Up",
+      res.render("signup_form", {
         data: newUser,
         errors: errors.array(),
       });
@@ -84,10 +89,12 @@ exports.user_signup_post = [
 ];
 
 exports.user_login_get = (req, res) => {
-  req.flash("error", "");
-  res.render("login", {
-    title: "Member Login",
-  });
+  if (!req.user) {
+    req.flash("error", "");
+    res.render("login_form");
+  } else {
+    res.redirect("/");
+  }
 };
 
 exports.user_login_post = [

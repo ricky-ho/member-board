@@ -11,11 +11,7 @@ router.get("/", user_controller.user_signup_get);
 router.post(
   "/",
   user_controller.user_signup_post,
-  passport.authenticate("local"),
-  (req, res) => {
-    req.flash("success", `Welcome, ${req.user.first_name}`);
-    return res.redirect("/");
-  }
+  passport.authenticate("local", { successRedirect: "/" })
 );
 
 module.exports = router;

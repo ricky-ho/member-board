@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  if locals.user
+    div(class="message-form-wrapper")
+
+      div(class="error-message")
+        if errors
+          p #{errors[0].msg}
+        
+      h1(style="margin-bottom: 30px") Create a new message
+      form(action="" method="POST" class="message-form")
+        a(href="/")
+          button(type="button" class="btn cancel-btn") 
+            span x
+        div(class="form-group")
+          label(for="title") Subject:
+          input#title(type="text" name="title" placeholder="Enter message subject" value=(data ? data.title : "") required)
+
+          - let text_body = data ? data.body : ""; 
+          label(for="message-body") Message:
+          textarea#message-body(name="message_body" placeholder="Enter message" rows="10" resize="none" required) #{text_body}
+
+        div(class="form-group")
+          button(type="submit" class="btn submit-btn") Submit
+  else
+    h1 Please login to create a message
+
+
